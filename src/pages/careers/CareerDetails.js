@@ -1,4 +1,5 @@
 import { useParams, useLoaderData } from "react-router-dom";
+import JobData from "../../data/db.json";
 
 export default function CareerDetails() {
   const { id } = useParams();
@@ -24,11 +25,6 @@ export default function CareerDetails() {
 // loader function
 export const careerDetailsLoader = async ({ params }) => {
   const { id } = params;
-  const res = await fetch(`http://127.0.0.1:8000/react-job-router/job/${id}`);
 
-  if (!res.ok) {
-    throw Error("Could not find the job");
-  }
-
-  return res.json();
+  return JobData.careers.filter((jobDetail) => jobDetail.id === id);
 };
