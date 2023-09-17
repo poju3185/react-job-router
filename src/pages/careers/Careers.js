@@ -17,10 +17,10 @@ export default function Careers() {
 
 // loader function
 export const careersLoader = async () => {
-  const res = await fetch("http://localhost:8000/careers");
+  const res = await fetch("http://127.0.0.1:8000/react-job-router/job");
   if (!res.ok) {
     throw Error("Could not fetch career data");
   }
-
+  console.log(res);
   return res.json();
 };

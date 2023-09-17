@@ -24,7 +24,7 @@ export default function CareerDetails() {
 // loader function
 export const careerDetailsLoader = async ({ params }) => {
   const { id } = params;
-  const res = await fetch(`http://localhost:8000/careers/${id}`);
+  const res = await fetch(`http://127.0.0.1:8000/react-job-router/job/${id}`);
 
   if (!res.ok) {
     throw Error("Could not find the job");
